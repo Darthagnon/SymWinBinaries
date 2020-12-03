@@ -1,11 +1,6 @@
 /*
  * © Marcus van Houdt 2014
- * Updated by Darren J. de Lima 2020
  */
-
-// Note: Does not support Unicode emoji/emoticons "Too many characters in character literal". Unless there exists an ASCII counterpart???
-// Note: Don't try to put different characters for upper and lower case, otherwise you'll get: "Invalid letter definition, unequal lower and upper case sequence length or length 0."
-// Note: BEWARE of adding Hebrew/Arabic characters; "final" forms cannot be put as "Caps" version, and Hebrew swaps arrow key/cursor direction because Hebrew is a RTL script!!!
 
 using System;
 using System.Collections.Generic;
@@ -21,17 +16,17 @@ namespace SymWin
       public static readonly Dictionary<Key, Tuple<Char[], Char[]>> KeysToSymbols = new Dictionary<Key, Tuple<Char[], Char[]>>
       {
          // Initial rough mapping for letters, not too much thought has gone into this yet.
-         { Key.A, Tuple.Create(new[] { 'á', 'à', 'ã', 'â', 'ä', 'ă', 'å', 'α', 'æ' }, // Caesar
-                               new[] { 'Á', 'À', 'Ã', 'Â', 'Ä', 'Ă', 'Å', 'Α', 'Æ' })},
+         { Key.A, Tuple.Create(new[] { 'á', 'à', 'ã', 'â', 'ä', 'å', 'α', 'æ', 'א' }, // Caesar, Hebrew Aleph
+                               new[] { 'Á', 'À', 'Ã', 'Â', 'Ä', 'Å', 'Α', 'Æ', 'א' })},
 
-         { Key.B, Tuple.Create(new[] { 'β' },
-                               new[] { 'Β' })},
+         { Key.B, Tuple.Create(new[] { 'β', 'ב' }, // Hebrew Beth
+                               new[] { 'Β', 'ב' })},
 
          { Key.C, Tuple.Create(new[] { 'ç', '©' }, // Copyright symbol
                                new[] { 'Ç', '©' })},
 
-         { Key.D, Tuple.Create(new[] { 'º', 'δ' }, // Degree symbol, Delta
-                               new[] { 'º', 'Δ' })},
+         { Key.D, Tuple.Create(new[] { 'º', 'δ', 'ד' }, // Degree symbol, Delta, Hebrew Daleth
+                               new[] { 'º', 'Δ', 'ד' })},
 
          { Key.E, Tuple.Create(new[] { 'é', 'è', 'ë', 'ê', 'ε', 'ð', 'η' }, // Eth
                                new[] { 'É', 'È', 'Ë', 'Ê', 'Ε', 'Ð', 'Η' })},
@@ -39,54 +34,56 @@ namespace SymWin
          { Key.F, Tuple.Create(new[] { 'φ', 'ƒ' }, // Greek Phi
                                new[] { 'Φ', 'Ƒ' })},
 
-         { Key.G, Tuple.Create(new[] { 'γ' }, // Greek Gamma
-                               new[] { 'Γ' })},
+         { Key.G, Tuple.Create(new[] { 'γ', 'ג' }, // Greek gamma, Hebrew Gimel
+                               new[] { 'Γ', 'ג' })},
 
-         { Key.H, Tuple.Create(new[] { 'ħ' },
-                               new[] { 'Ħ' })},
+         { Key.H, Tuple.Create(new[] { 'ħ', 'ה', 'ח' }, // Hebrew Cheth (1) and He (2) (yes, they look the almost the same)
+                               new[] { 'Ħ', 'ה', 'ח' })},
 
          { Key.I, Tuple.Create(new[] { 'í', 'ì', 'ï', 'î', 'ι' },
                                new[] { 'Í', 'Ì', 'Ï', 'Î', 'Ι' })},
 
-         { Key.J, _sEmpty },
+         { Key.J, Tuple.Create(new[] { 'י' }, // Hebrew Yodh
+                               new[] { 'י' })}, 
 
          { Key.L, Tuple.Create(new[] { 'λ', 'ל' },
                                new[] { 'Λ', 'ל' })},
 
-         { Key.M, Tuple.Create(new[] { 'µ' },
-                               new[] { 'Μ' })},
+         { Key.M, Tuple.Create(new[] { 'µ', 'מ' }, // Hebrew Mem regular (1) and final (2); BEWARE
+                               new[] { 'Μ', 'ם' })},
 
-         { Key.K, Tuple.Create(new[] { 'κ' }, 
-                               new[] { 'Κ' })},
+         { Key.K, Tuple.Create(new[] { 'κ', 'כ' }, // Hebrew Koph regular (1) and final position (2); BEWARE, "final" swaps arrow key/cursor direction because Hebrew is a RTL script!!!
+                               new[] { 'Κ', 'ך' })},
 
-         { Key.N, Tuple.Create(new[] { 'ñ', 'ν', 'ŋ' },
-                               new[] { 'Ñ', 'Ν', 'Ŋ' })},
+         { Key.N, Tuple.Create(new[] { 'ñ', 'ν', 'ŋ', 'נ' },
+                               new[] { 'Ñ', 'Ν', 'Ŋ', 'ן' })},
 
-         { Key.O, Tuple.Create(new[] { 'ô', 'œ', 'ó', 'ò', 'ö', 'õ', 'ø', 'ω' }, // Omega, oethel
-                               new[] { 'Ô', 'Œ', 'Ó', 'Ò', 'Ö', 'Õ', 'Ø', 'Ω' })},
+         { Key.O, Tuple.Create(new[] { 'ô', 'œ', 'ó', 'ò', 'ö', 'õ', 'ø', 'ω', 'ע' }, // Omega, oethel, Hebrew Ayin
+                               new[] { 'Ô', 'Œ', 'Ó', 'Ò', 'Ö', 'Õ', 'Ø', 'Ω', 'ע' })},
 
-         { Key.P, Tuple.Create(new[] { 'π', 'ψ', '⁋', '¶' },
-                               new[] { 'Π', 'Ψ', '⁋', '¶' })},
+         { Key.P, Tuple.Create(new[] { 'π', 'ψ', '⁋', '¶', 'פ' }, // Hebrew Pe
+                               new[] { 'Π', 'Ψ', '⁋', '¶', 'ף' })},
 
-         { Key.Q, _sEmpty },
+         { Key.Q, Tuple.Create(new[] { 'ק' }, // Hebrew Qoph
+                               new[] { 'ק' })},
 
-         { Key.R, Tuple.Create(new[] { 'ρ', '®' }, // Registered symbol
-                               new[] { 'Ρ', '®' })},
+         { Key.R, Tuple.Create(new[] { 'ρ', '®', 'ר' }, // Registered symbol, Hebrew Resh
+                               new[] { 'Ρ', '®', 'ר' })},
 
-         { Key.S, Tuple.Create(new[] { 'ß', 'ș', 'š', 'σ', 'ς' }, 
-                               new[] { 'ẞ', 'Ș', 'Š', 'Σ', 'Σ' })},
+         { Key.S, Tuple.Create(new[] { 'ß', 'š', 'σ', 'ς', 'ש' ,'צ' ,'ס'}, // Hebrew Samech (1), Tsade (2) and Shin (3)
+                               new[] { 'ẞ', 'Š', 'Σ', 'Σ', 'ש' ,'ץ' ,'ס' })},
 
-         { Key.T, Tuple.Create(new[] { 'θ', 'ț', 'τ', 'þ', '™' }, // Trademark symbol
-                               new[] { 'Θ', 'Ț', 'τ', 'Þ', '™' })},
+         { Key.T, Tuple.Create(new[] { 'θ', 'τ', 'þ', '™', 'ת' ,'ט' }, // Trademark symbol, Hebrew Tet (1) and Taw (2)
+                               new[] { 'Θ', 'τ', 'Þ', '™', 'ת' ,'ט' })},
 
          { Key.U, Tuple.Create(new[] { 'ú', 'ù', 'ü', 'û' },
                                new[] { 'Ú', 'Ù', 'Ü', 'Û' })},
 
          { Key.V, Tuple.Create(new[] { '✅' }, // I use V for checkmarks
-                               new[] { '✅' })},
+                               new[] { '✅' })}
 
-         { Key.W, Tuple.Create(new[] { 'ẃ', 'ẁ', 'ẅ', 'ŵ' },
-                               new[] { 'Ẃ', 'Ẁ', 'Ẅ', 'Ŵ' })},
+         { Key.W, Tuple.Create(new[] { 'ẃ', 'ẁ', 'ẅ', 'ŵ', 'ו' },
+                               new[] { 'Ẃ', 'Ẁ', 'Ẅ', 'Ŵ', 'ו' })},
 
          { Key.X, Tuple.Create(new[] { '❌', '×', 'Ξ', 'χ' }, // Multiply
                                new[] { '❌', '×', 'ξ', 'Χ' })},
@@ -94,28 +91,27 @@ namespace SymWin
          { Key.Y, Tuple.Create(new[] { 'ý', 'ỳ', 'ÿ', 'ŷ' },
                                new[] { 'Ý', 'Ỳ', 'Ÿ', 'Ŷ' })},
 
-         { Key.Z, Tuple.Create(new[] { 'ζ' },
-                               new[] { 'Ζ' })},
+         { Key.Z, Tuple.Create(new[] { 'ζ', 'ז' },
+                               new[] { 'Ζ', 'ז' })},
 
          // Numbers
          { Key.D0, Tuple.Create(new[] { '☺', '☻', '∞', 'ø' }, new[]  { '☺', '☻', '∞', 'Ø' })}, // Happy smiley
          { Key.D1, Tuple.Create(new[] { '¡', '‼', '¹' }, new[] { '¡', '‼', '¹' })},
          { Key.D2, Tuple.Create(new[] { '²', '½', '√' }, new[] { '²', '½', '√' })},
          { Key.D3, Tuple.Create(new[] { '⅓', '³', '§' }, new[] { '⅓', '³', '§' })},
-         { Key.D4, Tuple.Create(new[] { '£', '¥', '$', '€', '¢', '¤', '¼' }, new[] { '£', '¥', '$', '€', '¢', '¤', '¼' })},
+         { Key.D4, Tuple.Create(new[] { '£', '¥', '$', '€', '¢', '¤', '¼' }, new[] { '£', '¥', '$', '€', '¤', '¼' })},
          { Key.D5, Tuple.Create(new[] { '‰', '⅕', '♫', '♪' }, new[] { '‰', '⅕', '♫', '♪' })},
-         { Key.D6, Tuple.Create(new[] { 'â', 'ê', 'î', 'ô', 'û', 'ŵ', 'ŷ' },
-                                new[] { 'Â', 'Ê', 'Î', 'Ô', 'Û', 'Ŵ', 'Ŷ' })}, // Omitted Key 6/^, Duplicate circumflex letters
-         { Key.D7, Tuple.Create(new[] { '′', '″', '†', '‡', '※', '♂' }, new[] { '′', '″', '†', '‡', '※', '♀' })}, // Omitted Key 7, Prime/doubleprime=inches/feet, typography, Male/Female
+         { Key.D6, Tuple.Create(new[] { '†', '‡', '※', '♂' }, new[] { '†', '‡', '※', '♀' })}, // Omitted Key 6, typography and Male/Female symbols
+         { Key.D7, Tuple.Create(new[] { '👍', '🙏', '😂', '🤪', '❤', '💩', '🍆', 'ﷺ' }, // Omitted Key 7, emoji and fancy symbols
+                                new[] { '👌', '🖖', '😭', '🐵', '😍', '👀', '🍑', 'ﷺ' })}, 
          { Key.D8, Tuple.Create(new[] { '⁑', '⁂', '★', '✼', '❀' }, new[] { '⁑', '⁂', '★', '✼', '❀' })},
          { Key.D9, Tuple.Create(new[] { '☹' }, new[] { '☹' })}, // Sad smiley
          
-        //{ Key.OemOpenBrackets,  _sEmpty }, // Causes crashes because it doesn't exist
+         { Key.OemOpenBrackets,  Tuple.Create(new[] { '☹' }, new[] { '☹' })}
          { Key.OemCloseBrackets, Tuple.Create(new[] { '☺' }, new[] { '☺' })}, // Corrected to Happy Smiley U+263A
          { Key.Divide, Tuple.Create(new[]  { '÷' }, new[]  { '÷' })},
          { Key.OemQuotes, Tuple.Create(new[] { '«', '»'}, new[] { '«', '»'})},
-         { Key.OemComma, Tuple.Create(new[]  { '∙', '≤', 'ș', 'ț' },
-                                      new[]  { '∙', '≤', 'Ș', 'Ț' })}, // Catalan interpunct, Romanian comma-accents
+         { Key.OemComma, Tuple.Create(new[]  { '∙', , '≤'}, new[]  { '∙', '≤'})}, // Catalan interpunct
          { Key.OemPeriod,  Tuple.Create(new[] { '…', '≥' }, new[] { '…', '≥' })},
          { Key.OemPlus,   Tuple.Create(new[] { '≈', '≠', '±' }, new[] { '≈', '≠', '±' })},
 
@@ -125,13 +121,11 @@ namespace SymWin
          { Key.Oem8, _sEmpty },
          { Key.OemQuestion, Tuple.Create(new[] { '¿', '÷', '‽' }, new[] { '¿', '÷', '‽' })}, // Spanish inverse question mark
          { Key.OemBackslash, _sEmpty }, // Equals 102
-         { Key.OemMinus, Tuple.Create(new[] { '●' }, new[] { '●' })}, // I use "-" for bullets
+         { Key.OemMinus, _sEmpty },
          { Key.OemPipe, Tuple.Create(new[] { '¦' }, new[] { '¦' }) },
-         { Key.OemSemicolon, Tuple.Create(new[] { 'ä', 'ë', 'ï', 'ö', 'ü', 'ẅ', 'ÿ', },
-                                          new[] { 'Ä', 'Ë', 'Ï', 'Ö', 'Ü', 'Ẅ', 'Ÿ', }) }, // = Oem1 = Oem102, Duplicate umlaut letters
-         { Key.OemTilde, Tuple.Create(new[] { 'ã', 'ñ', 'õ' },
-                                      new[] { 'Ã', 'Ñ', 'Õ' })}, // Duplicate tilde letters
-         { Key.Subtract, _sEmpty },
+         { Key.OemSemicolon, _sEmpty }, // = Oem1 = Oem102
+         { Key.OemTilde, Tuple.Create(new[] { 'ã', 'ñ', 'õ' }, new[] { 'Ã', 'Ñ', 'Õ' })},
+         { Key.Subtract, Tuple.Create(new[] { '●' }, new[] { '●' })},
       };
 
       public static void UpdateKey(Key key, Char[] lowerCase, Char[] upperCase)
