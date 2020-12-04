@@ -1,0 +1,23 @@
+- tried to add @ ', didn't work
+Missing keys: numpad enter, @'
+- divided keys into groups according to keyboard location within the code
+Added weird keys and tested that they all work well :D
+- added F1-F12, Numpad numbers, Numlock keys, empty (no idea what should go there)
+- Numpad Add: equals
+- Space: back/forward slashes, underscore, dash, interpunct (woulda put full stop/period there, but it looked too confusing
+- Arrows: arrow symbols (also on Numpad 8246)
+
+- Numpad divide now has backslash, Numpad subtract now has underscore 
+
+because that's where US keyboards show it:
+3 now has #
+2 now has @
+
+This is not true: put different chars all you want
+// Note: Don't try to put different characters for upper and lower case, otherwise you'll get: "Invalid letter definition, unequal lower and upper case sequence length or length 0."
+
+Bug: takes a long time to quit. RAM usage may have gone up???
+
+duped a bunch of symbols, degree, paragraph, typography, to top left key. Oem8 might be @???
+
+bug: hash and @ don't show up on numbers 2 and 3 (this is due to settings files left behind in LocalAppData from previous tests)

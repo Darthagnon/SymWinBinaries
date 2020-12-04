@@ -1,0 +1,12 @@
+﻿changes:
+
+typos (missing/extra commas)
+2nd (Caps) cent symbol was missing
+ditched hebrew; too bizarre with cursor direction swapping
+new icon 1 (need new icon 2, as white line looks rubbish at 16px)
+ditched emojis, as they're not supported
+Duplicated umlaut letters to colon key
+Duplicated ^ circumflex letters to 6/^ key
+Added Romanian comma-accented letters ă ș ț (pre-1904 ĭ ŭ ĕ d̦ not included), duplicated to comma key
+https://en.wikipedia.org/wiki/Romanian_alphabet
+Moved bullet point to Key.OemMinus (this is the minus/underscore key) from Key.Subtract, where I'd erroneously put it.
