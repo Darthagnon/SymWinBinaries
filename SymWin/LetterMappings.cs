@@ -107,7 +107,7 @@ namespace SymWin
          { Key.D6, Tuple.Create(new[] { '⁶', 'â', 'ê', 'î', 'ô', 'û', 'ŵ', 'ŷ' },
                                 new[] { '⁶', 'Â', 'Ê', 'Î', 'Ô', 'Û', 'Ŵ', 'Ŷ' })}, // Omitted Key 6/^, Duplicate circumflex letters
          { Key.D7, Tuple.Create(new[] { '⁷', '′', '″', '†', '‡', '※', '♂' }, new[] { '⁷', '′', '″', '†', '‡', '※', '♀' })}, // Omitted Key 7, Prime/doubleprime=inches/feet, typography, Male/Female
-         { Key.D8, Tuple.Create(new[] { '⁑', '⁂', '⁸', ' '★', '✼', '❀' }, new[] { '⁑', '⁂', '⁸', '★', '✼', '❀' })},
+         { Key.D8, Tuple.Create(new[] { '⁑', '⁂', '⁸', '★', '✼', '❀' }, new[] { '⁑', '⁂', '⁸', '★', '✼', '❀' })},
          { Key.D9, Tuple.Create(new[] { '⁹', '☹' }, new[] { '⁹', '☹' })}, // Sad smiley
 		   { Key.D0, Tuple.Create(new[] { '⁰', '☺', '☻', '∞', 'ø', 'º' }, new[]  { '⁰', '☺', '☻', '∞', 'Ø', 'º' })}, // Happy smiley
          
