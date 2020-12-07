@@ -17,6 +17,7 @@ Based off suggestions from Anders and Annette, as well as some ideas of mine:
 - new 16px icon for the tray (currently extremely pixellated)
 - swap A accents
 - swap Us
+- missing ẽ Ẽ added
 - O cedilla earlier
 - swap E accents
 - added  ```º``` to 0 keys, too

@@ -33,8 +33,8 @@ namespace SymWin
          { Key.D, Tuple.Create(new[] { 'º', 'ð', 'δ' }, // Degree symbol, Eth, Delta
                                new[] { 'º', 'Ð', 'Δ' })},
 
-         { Key.E, Tuple.Create(new[] { 'é', 'è', 'ê', 'ë', 'ε', 'η' },
-                               new[] { 'É', 'È', 'Ê', 'Ë', 'Ε', 'Η' })},
+         { Key.E, Tuple.Create(new[] { 'é', 'è', 'ê', 'ë', 'ẽ', 'ε', 'η' },
+                               new[] { 'É', 'È', 'Ê', 'Ë', 'Ẽ', 'Ε', 'Η' })},
 
          { Key.F, Tuple.Create(new[] { 'φ', 'ƒ' }, // Greek Phi
                                new[] { 'Φ', 'Ƒ' })},
