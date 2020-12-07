@@ -20,9 +20,9 @@ namespace SymWin
 
       public static readonly Dictionary<Key, Tuple<Char[], Char[]>> KeysToSymbols = new Dictionary<Key, Tuple<Char[], Char[]>>
       {
-         // Initial rough mapping for letters, not too much thought has gone into this yet.
-         { Key.A, Tuple.Create(new[] { 'á', 'à', 'ã', 'â', 'ä', 'ă', 'å', 'α', 'æ' }, // Caesar
-                               new[] { 'Á', 'À', 'Ã', 'Â', 'Ä', 'Ă', 'Å', 'Α', 'Æ' })},
+         // Letter mappings are improved as users report frequently-needed letters. Preference given to international languages, e.g. English, French, Spanish
+         { Key.A, Tuple.Create(new[] { 'à', 'ã', 'á', 'â', 'ä', 'ă', 'å', 'α', 'æ' }, // Caesar
+                               new[] { 'À', 'Ã', 'Á', 'Â', 'Ä', 'Ă', 'Å', 'Α', 'Æ' })},
 
          { Key.B, Tuple.Create(new[] { 'β' },
                                new[] { 'Β' })},
@@ -30,11 +30,11 @@ namespace SymWin
          { Key.C, Tuple.Create(new[] { 'ç', '©' }, // Copyright symbol
                                new[] { 'Ç', '©' })},
 
-         { Key.D, Tuple.Create(new[] { 'º', 'δ' }, // Degree symbol, Delta
-                               new[] { 'º', 'Δ' })},
+         { Key.D, Tuple.Create(new[] { 'º', 'ð', 'δ' }, // Degree symbol, Eth, Delta
+                               new[] { 'º', 'Ð', 'Δ' })},
 
-         { Key.E, Tuple.Create(new[] { 'é', 'è', 'ë', 'ê', 'ε', 'ð', 'η' }, // Eth
-                               new[] { 'É', 'È', 'Ë', 'Ê', 'Ε', 'Ð', 'Η' })},
+         { Key.E, Tuple.Create(new[] { 'é', 'è', 'ê', 'ë', 'ε', 'η' },
+                               new[] { 'É', 'È', 'Ê', 'Ë', 'Ε', 'Η' })},
 
          { Key.F, Tuple.Create(new[] { 'φ', 'ƒ' }, // Greek Phi
                                new[] { 'Φ', 'Ƒ' })},
@@ -62,8 +62,8 @@ namespace SymWin
          { Key.N, Tuple.Create(new[] { 'ñ', 'ν', 'ŋ' },
                                new[] { 'Ñ', 'Ν', 'Ŋ' })},
 
-         { Key.O, Tuple.Create(new[] { 'ô', 'œ', 'ó', 'ò', 'ö', 'õ', 'ø', 'ω' }, // Omega, oethel
-                               new[] { 'Ô', 'Œ', 'Ó', 'Ò', 'Ö', 'Õ', 'Ø', 'Ω' })},
+         { Key.O, Tuple.Create(new[] { 'ô', 'œ', 'õ', 'ó', 'ò', 'ö', 'ø', 'ω' }, // Omega, oethel
+                               new[] { 'Ô', 'Œ', 'Õ', 'Ó', 'Ò', 'Ö', 'Ø', 'Ω' })},
 
          { Key.P, Tuple.Create(new[] { 'π', 'ψ', '¶' },
                                new[] { 'Π', 'Ψ', '¶'  })},
@@ -79,8 +79,8 @@ namespace SymWin
          { Key.T, Tuple.Create(new[] { 'θ', 'ț', 'τ', 'þ', '™' }, // Trademark symbol
                                new[] { 'Θ', 'Ț', 'τ', 'Þ', '™' })},
 
-         { Key.U, Tuple.Create(new[] { 'ú', 'ù', 'ü', 'û' },
-                               new[] { 'Ú', 'Ù', 'Ü', 'Û' })},
+         { Key.U, Tuple.Create(new[] { 'û', 'ú', 'ù', 'ü' },
+                               new[] { 'Û', 'Ú', 'Ù', 'Ü' })},
 
          { Key.V, Tuple.Create(new[] { '✅' }, // I use V for checkmarks
                                new[] { '✅' })},
@@ -102,19 +102,19 @@ namespace SymWin
          { Key.D1, Tuple.Create(new[] { '¡', '‼', '¹' }, new[] { '¡', '‼', '¹' })},
          { Key.D2, Tuple.Create(new[] { '@', '²', '½', '√' }, new[] { '@', '²', '½', '√' })},
          { Key.D3, Tuple.Create(new[] { '#', '⅓', '³', '§' }, new[] { '#', '⅓', '³', '§' })},
-         { Key.D4, Tuple.Create(new[] { '£', '¥', '$', '€', '¢', '¤', '¼' }, new[] { '£', '¥', '$', '€', '¢', '¤', '¼' })},
-         { Key.D5, Tuple.Create(new[] { '‰', '⅕', '♫', '♪' }, new[] { '‰', '⅕', '♫', '♪' })},
-         { Key.D6, Tuple.Create(new[] { 'â', 'ê', 'î', 'ô', 'û', 'ŵ', 'ŷ' },
-                                new[] { 'Â', 'Ê', 'Î', 'Ô', 'Û', 'Ŵ', 'Ŷ' })}, // Omitted Key 6/^, Duplicate circumflex letters
-         { Key.D7, Tuple.Create(new[] { '′', '″', '†', '‡', '※', '♂' }, new[] { '′', '″', '†', '‡', '※', '♀' })}, // Omitted Key 7, Prime/doubleprime=inches/feet, typography, Male/Female
-         { Key.D8, Tuple.Create(new[] { '⁑', '⁂', '★', '✼', '❀' }, new[] { '⁑', '⁂', '★', '✼', '❀' })},
-         { Key.D9, Tuple.Create(new[] { '☹' }, new[] { '☹' })}, // Sad smiley
-		   { Key.D0, Tuple.Create(new[] { '☺', '☻', '∞', 'ø' }, new[]  { '☺', '☻', '∞', 'Ø' })}, // Happy smiley
+         { Key.D4, Tuple.Create(new[] { '£', '¥', '$', '€', '¢', '¤', '¼', '⁴' }, new[] { '£', '¥', '$', '€', '¢', '¤', '¼', '⁴' })},
+         { Key.D5, Tuple.Create(new[] { '‰', '⅕', '⁵', '♫', '♪' }, new[] { '‰', '⅕', '⁵', '♫', '♪' })},
+         { Key.D6, Tuple.Create(new[] { '⁶', 'â', 'ê', 'î', 'ô', 'û', 'ŵ', 'ŷ' },
+                                new[] { '⁶', 'Â', 'Ê', 'Î', 'Ô', 'Û', 'Ŵ', 'Ŷ' })}, // Omitted Key 6/^, Duplicate circumflex letters
+         { Key.D7, Tuple.Create(new[] { '⁷', '′', '″', '†', '‡', '※', '♂' }, new[] { '⁷', '′', '″', '†', '‡', '※', '♀' })}, // Omitted Key 7, Prime/doubleprime=inches/feet, typography, Male/Female
+         { Key.D8, Tuple.Create(new[] { '⁑', '⁂', '⁸', ' '★', '✼', '❀' }, new[] { '⁑', '⁂', '⁸', '★', '✼', '❀' })},
+         { Key.D9, Tuple.Create(new[] { '⁹', '☹' }, new[] { '⁹', '☹' })}, // Sad smiley
+		   { Key.D0, Tuple.Create(new[] { '⁰', '☺', '☻', '∞', 'ø', 'º' }, new[]  { '⁰', '☺', '☻', '∞', 'Ø', 'º' })}, // Happy smiley
          
 		 
 		   // Misc. symbol keys
 		   // Line 1
-		   { Key.OemMinus, Tuple.Create(new[] { '●' }, new[] { '●' })}, // I use "-" for bullets
+		   { Key.OemMinus, Tuple.Create(new[] { '–', '●' }, new[] { '–', '●' })}, // I use "-" for bullets
 		   { Key.OemPlus, Tuple.Create(new[] { '≈', '≠', '±' }, new[] { '≈', '≠', '±' })},
 		 
 		   // Line 2
@@ -138,23 +138,23 @@ namespace SymWin
 		   // Numpad functions
 		   { Key.Divide, Tuple.Create(new[]  { '÷', '\\' }, new[]  { '÷', '\\' })},
 		   { Key.Multiply, Tuple.Create(new[] { '×' }, new[] { '×' })},
-		   { Key.Subtract, Tuple.Create(new[]  { '_' }, new[]  { '_' })},
+		   { Key.Subtract, Tuple.Create(new[]  { '_', '–' }, new[]  { '_', '–' })},
          { Key.Add, Tuple.Create(new[]  { '=' }, new[]  { '=' })},
          { Key.Decimal, Tuple.Create(new[]  { 'º' }, new[]  { 'º' })},
          
 		 
 		 
 		   // Numpad numbers
-         { Key.NumPad9, _sEmpty },
-         { Key.NumPad8, Tuple.Create(new[] { '↑'}, new[] { '↑' }) },
-         { Key.NumPad7, _sEmpty },
-         { Key.NumPad6, Tuple.Create(new[] { '→'}, new[] { '→' }) },
-         { Key.NumPad5, _sEmpty },
-         { Key.NumPad4, Tuple.Create(new[] { '←'}, new[] { '←' }) },
-         { Key.NumPad3, _sEmpty },
-         { Key.NumPad2, Tuple.Create(new[] { '↓'}, new[] { '↓' }) },
-         { Key.NumPad1, _sEmpty },
-         { Key.NumPad0, _sEmpty },
+         { Key.NumPad9, Tuple.Create(new[] { '⁹' }, new[] { '⁹' })},
+         { Key.NumPad8, Tuple.Create(new[] { '⁸', '↑' }, new[] { '⁸', '↑' })},
+         { Key.NumPad7, Tuple.Create(new[] { '⁷' }, new[] { '⁷' })},
+         { Key.NumPad6, Tuple.Create(new[] { '⁶', '→' }, new[] { '⁶', '→' })},
+         { Key.NumPad5, Tuple.Create(new[] { '⁵' }, new[] { '⁵' })},
+         { Key.NumPad4, Tuple.Create(new[] { '⁴', '←' }, new[] { '⁴', '←' })},
+         { Key.NumPad3, Tuple.Create(new[] { '³' }, new[] { '³' })},
+         { Key.NumPad2, Tuple.Create(new[] { '²', '↓' }, new[] { '²', '↓' })},
+         { Key.NumPad1, Tuple.Create(new[] { '¹' }, new[] { '¹' })},
+         { Key.NumPad0, Tuple.Create(new[] { '⁰', 'º' }, new[] { '⁰', 'º' })},
 	
 
 		   // Oddballs

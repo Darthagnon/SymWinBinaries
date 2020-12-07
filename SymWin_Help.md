@@ -20,13 +20,14 @@ In order of how good they are:
 1. **[WinCompose](http://wincompose.info/)**, a 100MB RAM fully-featured compose key for Windows: hold a hotkey, then type a letter followed by an accent, e.g. colon, and they'll be combined into accented letters or emojis. Takes some imagination and thought to use. Make sure to enable **Options** >> **Tweaks** >> **On invalid sequences** >> **Try to swap the two keys** to make it easier to use. It has no GUI while in use; refer to it's cheatsheet if confused. Still in slow, but active, development as of 12/2020.
 2. **[Antibody Software's Wizkey](https://antibody-software.com/wizkey/)**, 2013 commercial abandonware that works well, is a bit ugly and can't be pirated yet (though you can run the trial forever using [NirSoft RunAsDate](https://www.nirsoft.net/utils/run_as_date.html))
 3. **[CatchChar](https://www.softpedia.com/get/Office-tools/Other-Office-Tools/CatchChar.shtml)**, free abandonware that adds a hotkey to bring up a vertical context menu with special characters. Unfortunately, doesn't come with any presets, and is a pain to configure. ([Old Homepage](https://helpingthings.com/index.php/insert-unicode-characters), [New Homepage](https://whizfolders.com/addons.aspx))
-4. **Microsoft Office's Insert Symbol option**, but it's only usable in Microsoft Office (other office software will have equivalents)
-5. **Charmap.exe (Character Map)** comes with Windows, but it's rubbish
-6. **[ExtraKeys](https://www.deeproot.co.uk/extrakeys.html)**, a commercial/demo Character Map on-screen keyboard. From screenshots, it was made for WinXP.
-6. **[BabelMap](https://www.babelstone.co.uk/Software/BabelMap.html)**, yet another alternative FOSS Character Map
-7. **[PopChar](https://www.ergonis.com/products/popcharwin/)**, commercial Character Map alternative
-8. **[AllChars](http://allchars.zwolnet.com/)**, abandoned FOSS project similar in function to SymWin, but **DO NOT USE IT**. It is extremely outdated and will glitch out your PC; I tried.
-9. **[Mac OS X](https://www.howtogeek.com/219834/how-to-enter-special-characters-in-os-x-in-two-keystrokes/)** has a popup window identical to SymWin when you hold a key, rather than typing ```aaaaaaaaaaaaaaaa``` like most other operating systems.
+4. **HoldKey[http://www.holdkey.eu/ ]**, commercial (with demo) software that works in a similar way to SymWin; a user has switched to SymWin in preference as HoldKey mappings cannot be customised.
+5. **Microsoft Office's Insert Symbol option**, but it's only usable in Microsoft Office (other office software will have equivalents)
+6. **Charmap.exe (Character Map)** comes with Windows, but it's rubbish
+7. **[ExtraKeys](https://www.deeproot.co.uk/extrakeys.html)**, a commercial/demo Character Map on-screen keyboard. From screenshots, it was made for WinXP.
+8. **[BabelMap](https://www.babelstone.co.uk/Software/BabelMap.html)**, yet another alternative FOSS Character Map
+9. **[PopChar](https://www.ergonis.com/products/popcharwin/)**, commercial Character Map alternative
+10. **[AllChars](http://allchars.zwolnet.com/)**, abandoned FOSS project similar in function to SymWin, but **DO NOT USE IT**. It is extremely outdated and will glitch out your PC; I tried.
+11. **[Mac OS X](https://www.howtogeek.com/219834/how-to-enter-special-characters-in-os-x-in-two-keystrokes/)** has a popup window identical to SymWin when you hold a key, rather than typing ```aaaaaaaaaaaaaaaa``` like most other operating systems.
 
 If you're on Windows 7/8/8.1 and you want an emoji picker, like Windows 10 has, I recommend [WinMoji](https://github.com/ryanSN/winmoji) (NB. it's a Chromium app, but there's very few alternatives) or [Jack Le's Emoji Keyboard 2.0](https://www.youtube.com/watch?v=Lwn0AYreSMw) (C#/.Net, but closed-source and kinda jank)
 

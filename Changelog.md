@@ -4,6 +4,23 @@ Documenting changes made by Darren J. de Lima over the original project.
 
 Spoiler: you can type your chosen key into the starting box, if you can't find it from the wacky names Windows uses
 
+## Changes 5: 07-12-2020
+-v0.4 release
+
+https://github.com/Darthagnon/SymWinBinaries/issues/6
+Based off suggestions from Anders and Annette, as well as some ideas of mine:
+
+- Eth ðÐ is on E by default (it was the previous programmer, I swear!). It should be on D by default.
+- Add long dash/minus to the dash/underscore key and numpad minus ```–```
+- Add more superscript numbers (only 1, 2, 3 are currently present) and to the numpad keys, too
+- Add alternative http://www.holdkey.eu/ to help document
+- new 16px icon for the tray (currently extremely pixellated)
+- swap A accents
+- swap Us
+- O cedilla earlier
+- swap E accents
+- added  ```º``` to 0 keys, too
+
 ## Changes 4: 04-12-2020
 - v0.3 release
 
