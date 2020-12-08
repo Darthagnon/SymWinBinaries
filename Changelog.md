@@ -8,6 +8,7 @@ Spoiler: you can type your chosen key into the starting box, if you can't find i
 - Can be slow to exit
 - EXE needs to run as Admin (probably due to keyboard hooking, in which case there's nothing can do about it)
 - RAM usage increases the more symbols you type (not extensively tested; I suspect it's symbols being loaded into memory as they're used)
+- Not single-instance; crashes if multiple instances are somehow open and you close one.
 
 ## Changes 6: 08-12-2020
 - v0.4 release
