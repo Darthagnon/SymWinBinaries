@@ -4,8 +4,17 @@ Documenting changes made by Darren J. de Lima over the original project.
 
 Spoiler: you can type your chosen key into the starting box, if you can't find it from the wacky names Windows uses
 
+## Known bugs
+- Can be slow to exit
+- EXE needs to run as Admin (probably due to keyboard hooking, in which case there's nothing can do about it)
+- RAM usage increases the more symbols you type (not extensively tested; I suspect it's symbols being loaded into memory as they're used)
+
+## Changes 6: 08-12-2020
+- v0.4 release
+- Hopefully finally fixed icon (added [iOS-spec squircle](https://blog.mikeswanson.com/iosroundedrect/) white background to black icon) rendered 256-colour versions for Safe Mode
+
 ## Changes 5: 07-12-2020
--v0.4 release
+- NOT v0.4 release
 
 https://github.com/Darthagnon/SymWinBinaries/issues/6
 Based off suggestions from Anders and Annette, as well as some ideas of mine:
